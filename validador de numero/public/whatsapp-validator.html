@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de WhatsApp - RF-001</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Validador de WhatsApp</h1>
+            <p>Validação de números via planilha Excel</p>
+        </div>
+
+        <div class="content">
+            <!-- Upload Section -->
+            <div class="upload-section" id="uploadSection">
+                <h3>📁 Importar Planilha Excel (.xlsx)</h3>
+                <p style="margin: 15px 0; color: #667;">
+                    Selecione uma planilha Excel contendo os dados dos clientes.<br>
+                    <strong>Limite:</strong> máximo 10.000 registros
+                </p>
+                <input type="file" id="fileInput" class="file-input" accept=".xlsx" />
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    📤 Selecionar Arquivo
+                </button>
+                <div style="margin-top: 15px; font-size: 0.9rem; color: #888;">
+                    Ou arraste e solte o arquivo aqui
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats-grid hidden" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalClients">0</div>
+                    <div class="stat-label">Total de Clientes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="withWhatsApp">0</div>
+                    <div class="stat-label">✅ Com WhatsApp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="withoutWhatsApp">0</div>
+                    <div class="stat-label">❌ Sem WhatsApp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pendingVerification">0</div>
+                    <div class="stat-label">⏳ Pendentes</div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions hidden" id="actionsSection">
+                <button class="btn btn-primary" id="verifyBtn" onclick="startVerification()">
+                    🔍 Verificar Números
+                </button>
+                <button class="btn btn-success" id="exportWithBtn" onclick="exportData('with')" disabled>
+                    📊 Baixar com WhatsApp
+                </button>
+                <button class="btn btn-danger" id="exportWithoutBtn" onclick="exportData('without')" disabled>
+                    📊 Baixar sem WhatsApp
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="hidden" id="progressSection">
+                <div class="alert alert-info">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="loading"></div>
+                        <span>Verificando números... <span id="progressText">0/0</span></span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container hidden" id="tableContainer">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Status WhatsApp</th>
+                            <th>Outros Dados</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clientsTable">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Alerts -->
+            <!-- <div class="alert alert-warning">
+                <strong>⚠️ Importante:</strong> A verificação de WhatsApp é simulada nesta demonstração. 
+                Em produção, seria integrada com a API oficial do WhatsApp Business da Meta.
+            </div> -->
+        </div>
+    </div>
+
+    <script src="script.js">
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+2025/07/09-10:47:15.885 4d00 Reusing MANIFEST C:\Users\JULIO\Desktop\projeto do financeiro completo\validador de numero\tokens\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/09-10:47:15.886 4d00 Recovering log #311
+2025/07/09-10:47:15.909 4d00 Reusing old log C:\Users\JULIO\Desktop\projeto do financeiro completo\validador de numero\tokens\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000311.log 
+2025/07/09-10:47:16.921 232c Level-0 table #317: started
+2025/07/09-10:47:16.939 232c Level-0 table #317: 462683 bytes OK
+2025/07/09-10:47:16.943 232c Delete type=0 #311
+2025/07/09-10:47:16.944 232c Manual compaction at level-0 from '\x00\\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00]\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/09-10:47:19.120 4d00 Compacting 1@1 + 2@2 files
+2025/07/09-10:47:19.219 4d00 Generated table #318@1: 65386 keys, 2283308 bytes
+2025/07/09-10:47:19.242 4d00 Generated table #319@1: 8139 keys, 338562 bytes
+2025/07/09-10:47:19.242 4d00 Compacted 1@1 + 2@2 files => 2621870 bytes
+2025/07/09-10:47:19.248 4d00 compacted to: files[ 0 0 2 0 0 0 0 ]
+2025/07/09-10:47:19.249 4d00 Delete type=2 #313
+2025/07/09-10:47:19.249 4d00 Delete type=2 #314
+2025/07/09-10:47:19.249 4d00 Delete type=2 #317
